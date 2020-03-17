@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Clase con información de los pacientes
+*/
+using System.Collections.Generic;
 
 class Paciente
 {
@@ -22,6 +25,7 @@ class Paciente
         consultasRealizadas.Sort();
     }
 
+    //Comprueba la existencia de una consulta en el paciente
     public bool ExisteConsulta(string t)
     {
         
@@ -38,12 +42,13 @@ class Paciente
     public override string ToString()
     {
         string imprimeConsulta = "\nPaciente: " + Nombre + ". DNI: " + Dni +
-            "\nCosultas realizadas: \n";
+            "\n\nCosultas realizadas: \n\n";
         if (consultasRealizadas.Count == 0)
         {
             return imprimeConsulta += "\nEl paciente no tiene consultas almacenadas";
         }
-        consultasRealizadas.ForEach(j => imprimeConsulta += "- " + j.TipoConsulta + " (atendido por " + j.PersonaAtendio.Nombre + ")\n\n");
+   
+        consultasRealizadas.ForEach(consulta => imprimeConsulta += consulta.ToString());
 
         return imprimeConsulta;
     }

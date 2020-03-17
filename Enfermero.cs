@@ -1,4 +1,7 @@
-﻿
+﻿/*
+ * Clase Enfermero, que hereda de PersonalHospital
+ * */
+
 public class Enfermero: PersonalHospital
 {
     int numero;
@@ -12,6 +15,6 @@ public class Enfermero: PersonalHospital
 
     public override string ToString()
     {
-        return base.ToString();
+        return "enfermero/a " + base.ToString();
     }
 }

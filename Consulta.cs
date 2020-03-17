@@ -1,5 +1,7 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿/*
+ * Clase con información de las consultas
+*/
+using System;
 
 class Consulta : IComparable<Consulta>
 {
@@ -16,7 +18,7 @@ class Consulta : IComparable<Consulta>
     public PersonalHospital PersonaAtendio { get => personaAtendio; set => personaAtendio = value; }
     public override string ToString()
     {
-        return TipoConsulta + " " + PersonaAtendio;
+        return "- " + TipoConsulta + " (atendido por " + PersonaAtendio.ToString() + ")\n\n";
     }
 
     public int CompareTo(Consulta otraConsulta)
